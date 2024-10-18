@@ -1,16 +1,16 @@
 # Punto 1
-Paso 1: Activa el entorno virtual:
+## Paso 1: Activa el entorno virtual:
 
     source punto1/bin/activate
 
 
-Paso 2:
+## Paso 2:
 
 Corre el archivo de la siguiente manera:
 
     python3 main.py
 
-Paso 3:
+## Paso 3:
 
 El programa te pedirá que ingreses una expresión racional, por ejemplo:
 
@@ -25,7 +25,7 @@ El código está diseñado para:
     Evaluador: El archivo EvalVisitor.py implementa un visitante que recorre el árbol de análisis sintáctico y evalúa las expresiones racionales. Se asegura de manejar las fracciones, simplificarlas, y validar operaciones inválidas (como la división por 0).
     Simplificación de Fracciones: El evaluador utiliza el máximo común divisor (MCD) para simplificar los resultados de las operaciones con fracciones.
 
-Ejemplo
+## Ejemplo
 
 Si ingresas la expresión (1/3 + 2/3), el programa calculará el resultado como 3/3 y lo simplificará a 1/1.
 
@@ -41,97 +41,52 @@ El código maneja errores como la división por cero y verifica que las operacio
 
 ## Activar el Entorno Virtual
 
-Si aún no has creado el entorno virtual, puedes hacerlo de la siguiente manera:
+Activa el entorno virtual de esta forma:
 
-bash
+    
+    source antlr-env/bin/activate
 
-python -m venv venv
 
-Activa el entorno virtual:
 
-    En Linux/Mac:
 
-    bash
-
-source venv/bin/activate
-
-En Windows:
-
-bash
-
-    .\venv\Scripts\activate
-
-Paso 3: Instalar Dependencias
-
-Con el entorno virtual activado, instala las dependencias necesarias:
-
-bash
-
-pip install -r requirements.txt
-
-Asegúrate de que el archivo requirements.txt contenga la siguiente línea:
-
-plaintext
-
-antlr4-python3-runtime==4.13.1
-
-Paso 4: Ejecutar el Código
+## Ejecutar el Código
 
 Una vez configurado el entorno virtual, puedes ejecutar el código principal que procesa las expresiones MAP y FILTER. Para ello, utiliza el siguiente comando:
 
-bash
 
-python main.py
+    python main.py
 
 Entrada
 
 El programa lee expresiones desde un archivo input.txt, que debe contener una o más líneas con expresiones de MAP o FILTER para procesar. Cada expresión debe estar en el formato adecuado.
 Ejemplos de Entrada
 
-    Para aplicar una función sobre los elementos de una lista:
+el input es:
 
-    plaintext
 
-MAP(lambda x: x + 1, [1, 2, 3])
 
-Para filtrar una lista con base en una condición:
-
-plaintext
+    MAP(lambda x: x + 1, [1, 2, 3])
 
     FILTER(lambda x: x % 2 == 0, [1, 2, 3, 4])
 
-Descripción del Código
 
+La salida será:
+
+
+    Resultado MAP: [2, 3, 4]
+    Resultado FILTER: [2, 4]
+
+## Descripción del Código
 El código se basa en una gramática desarrollada en ANTLR que permite procesar las funciones MAP y FILTER:
 
     MAP: Aplica una función a cada elemento de un iterable (como una lista) y devuelve una nueva lista con los resultados.
     FILTER: Filtra los elementos de un iterable basado en una función condicional, devolviendo una nueva colección con los elementos que cumplen la condición.
 
-Archivos Principales
+## Archivos Principales
 
     MapFunctionLexer.py y MapFunctionParser.py: Son generados por ANTLR a partir de la gramática. Estos archivos contienen el analizador léxico y sintáctico que se utiliza para procesar las expresiones.
     main.py: Archivo principal que lee el archivo input.txt, procesa las expresiones MAP y FILTER, y ejecuta las operaciones correspondientes.
     EvalVisitor.py: Implementa el recorrido del árbol sintáctico generado por ANTLR, aplicando las funciones de MAP y FILTER.
-
-Ejecución del Código
-
-El programa ejecuta las expresiones una por una, aplicando la función correspondiente a cada línea del archivo input.txt. El resultado de las operaciones se imprime en la consola.
-Ejemplo de Salida
-
-Si el archivo input.txt contiene las siguientes líneas:
-
-plaintext
-
-MAP(lambda x: x + 1, [1, 2, 3])
-FILTER(lambda x: x % 2 == 0, [1, 2, 3, 4])
-
-La salida será:
-
-plaintext
-
-Resultado MAP: [2, 3, 4]
-Resultado FILTER: [2, 4]
-
 Nota
 
 El código puede manejar operaciones aritméticas simples y condiciones de filtrado sobre los elementos de una lista, utilizando las funciones lambda definidas en el lenguaje de entrada.
