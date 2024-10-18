@@ -1,4 +1,4 @@
-#Punto 1
+# Punto 1
 Paso 1: Activa el entorno virtual:
 
     source venv/bin/activate
