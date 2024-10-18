@@ -138,11 +138,6 @@ Ejecución del Código
 El programa ejecuta las transformadas de Laplace para cada línea del archivo input.txt y las imprime en la consola.
 Ejemplo de Salida
 
-    Laplace(1)
-    Laplace(e^a t)
-    Laplace(t)
-    Laplace(e^b t)
-
 La salida será:
 
     
