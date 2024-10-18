@@ -90,3 +90,67 @@ El código se basa en una gramática desarrollada en ANTLR que permite procesar 
 Nota
 
 El código puede manejar operaciones aritméticas simples y condiciones de filtrado sobre los elementos de una lista, utilizando las funciones lambda definidas en el lenguaje de entrada.
+
+
+
+# Punto 3
+ 
+ ## Activar el Entorno Virtual
+
+Como el entorno virtual ya está creado y configurado, solo necesitas activarlo.
+
+
+    source venv/bin/activate
+
+
+## Ejecutar el Código
+
+Una vez activado el entorno virtual, puedes ejecutar el código principal que procesa las expresiones de transformada de Laplace. Para ello, utiliza el siguiente comando:
+
+    python main.py
+
+Entrada
+
+El programa lee expresiones desde un archivo input.txt, que debe contener una o más líneas con las funciones a transformar usando la sintaxis definida.
+
+El archivo input.txt puede contener las siguientes líneas:
+
+
+    Laplace(1)
+    Laplace(e^a t)
+    Laplace(t)
+    Laplace(e^b t)
+
+Estas funciones representan transformadas básicas, donde a y b son constantes en las funciones exponenciales.
+Descripción del Código
+
+El código se basa en una gramática desarrollada en ANTLR que permite calcular las transformadas de Laplace de funciones simples.
+
+
+Archivos Principales
+
+    LaplaceLexer.py y LaplaceParser.py: Son generados por ANTLR a partir de la gramática. Estos archivos contienen el analizador léxico y sintáctico que se utiliza para procesar las expresiones.
+    main.py: Archivo principal que lee el archivo input.txt, procesa las expresiones y aplica la transformada de Laplace.
+    Laplace.g4: Archivo de gramática utilizado por ANTLR para generar el lexer y el parser.
+
+Ejecución del Código
+
+El programa ejecuta las transformadas de Laplace para cada línea del archivo input.txt y las imprime en la consola.
+Ejemplo de Salida
+
+    Laplace(1)
+    Laplace(e^a t)
+    Laplace(t)
+    Laplace(e^b t)
+
+La salida será:
+
+    
+    Expresión: Laplace(1), Transformada: 1/s
+    Expresión: Laplace(e^a t), Transformada: 1/(s - a)
+    Expresión: Laplace(t), Transformada: 1/s^2
+    Expresión: Laplace(e^b t), Transformada: 1/(s - b)
+
+Nota
+
+Este proyecto soporta transformadas básicas y se puede ampliar para manejar más funciones y expresiones complejas según las necesidades.
