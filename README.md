@@ -1,5 +1,5 @@
 # Punto 1
-## PActiva el entorno virtual:
+## Activa el entorno virtual:
 
     source punto1/bin/activate
 
