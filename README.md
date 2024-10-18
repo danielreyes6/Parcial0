@@ -1,16 +1,14 @@
 # Punto 1
-## Paso 1: Activa el entorno virtual:
+## PActiva el entorno virtual:
 
     source punto1/bin/activate
 
 
-## Paso 2:
+## Corre el archivo
 
 Corre el archivo de la siguiente manera:
 
     python3 main.py
-
-## Paso 3:
 
 El programa te pedirá que ingreses una expresión racional, por ejemplo:
 
