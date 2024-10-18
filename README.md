@@ -100,7 +100,7 @@ El código puede manejar operaciones aritméticas simples y condiciones de filtr
 Como el entorno virtual ya está creado y configurado, solo necesitas activarlo.
 
 
-    source venv/bin/activate
+    source punto3/bin/activate
 
 
 ## Ejecutar el Código
